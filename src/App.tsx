@@ -1,26 +1,61 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import { getData } from "../src/api/index";
+import { Icoment } from "./types";
+import { type } from "os";
 
-function App() {
+const App: React.FC = () => {
+  let data: Icoment[] = [];
+  const [coments, setComents] = useState(data);
+
+  useEffect(() => {
+    getData().then((res) => {
+      setComents(res);
+    });
+  }, []);
+
+  if (coments.length) {
+    transFormData(coments);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {coments.length &&
+        coments.map((coment, index) => {
+          return <div key={index}>{coment.title}</div>;
+        })}
     </div>
   );
-}
+};
 
 export default App;
+
+type USERCOMENTS = {
+  userId: number;
+  coments: Icoment[];
+};
+
+const transFormData = (dataArray: Icoment[]) => {
+  let userId: number = 0;
+  let userComents: Icoment[] = [];
+  let allUserComents: USERCOMENTS[] = [];
+
+  dataArray.forEach((item) => {
+    let auxUserId: number = item.userId;
+    if (auxUserId === userId) {
+      userComents.push(item);
+    } else {
+      userId = item.userId;
+      let auxItem: USERCOMENTS = {
+        userId: item.userId,
+        coments: userComents,
+      };
+      allUserComents.push(auxItem);
+      userComents = [];
+      userComents.push(item);
+    }
+    
+  });
+  console.log('allUserComents',allUserComents);
+  
+};
