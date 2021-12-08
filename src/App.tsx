@@ -1,61 +1,75 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import { getData } from "../src/api/index";
-import { Icoment } from "./types";
-import { type } from "os";
+import { getData } from "../src/api";
+import { Icoment, USERCOMENTS } from "./types";
+import { transFormData } from "../src/utils";
+import UserProfile from "./components/UserProfile/UserProfile";
+import { Card } from "./components/";
+
+
+interface FullName {
+  firstName: string;
+  lastName: string;
+}
+
+let prueba:FullName = {
+  firstName: 'JJ',
+  lastName: 'Trigo'
+}
+
+
 
 const App: React.FC = () => {
-  let data: Icoment[] = [];
-  const [coments, setComents] = useState(data);
 
+  let data: Icoment[] = [];
+  let allUsersData: USERCOMENTS[] = [];
+
+  const [coments, setComents] = useState(data);
+  const [ allUsers, setAllUsers ] = useState(allUsersData);
+
+  
   useEffect(() => {
     getData().then((res) => {
       setComents(res);
+      setAllUsers(transFormData(res))
+      console.log(res);
+      
     });
   }, []);
 
-  if (coments.length) {
-    transFormData(coments);
-  }
+  
 
   return (
     <div className="App">
-      {coments.length &&
-        coments.map((coment, index) => {
-          return <div key={index}>{coment.title}</div>;
-        })}
+      {/* <UserProfile /> */}
+
+      <Card props={allUsers}/>
+
+      {/* {allUsers.length &&
+        allUsers.map((user, index) => {
+          return (
+            <div key={index}>
+              <h1>UserId</h1>
+              {user.userId} 
+              
+              {user.coments.map((coment, index) =>{
+                return (
+                  <div key={`child${index}`}>
+                      <h2>Title</h2>
+                      {coment.title}
+                      <h3>body</h3>
+                      {coment.body}
+                  </div>
+                )
+              })}
+
+            </div>
+          );
+        })} */}
+
+        
     </div>
   );
 };
 
 export default App;
-
-type USERCOMENTS = {
-  userId: number;
-  coments: Icoment[];
-};
-
-const transFormData = (dataArray: Icoment[]) => {
-  let userId: number = 0;
-  let userComents: Icoment[] = [];
-  let allUserComents: USERCOMENTS[] = [];
-
-  dataArray.forEach((item) => {
-    let auxUserId: number = item.userId;
-    if (auxUserId === userId) {
-      userComents.push(item);
-    } else {
-      userId = item.userId;
-      let auxItem: USERCOMENTS = {
-        userId: item.userId,
-        coments: userComents,
-      };
-      allUserComents.push(auxItem);
-      userComents = [];
-      userComents.push(item);
-    }
-    
-  });
-  console.log('allUserComents',allUserComents);
-  
-};
