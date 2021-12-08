@@ -4,3 +4,9 @@ export interface Icoment {
     title: string;
     body: string;
 }
+
+
+export interface USERCOMENTS {
+    userId: number;
+    coments: Icoment[];
+  };
