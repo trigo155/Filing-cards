@@ -9,14 +9,11 @@ const App: React.FC = () => {
   let data: Icoment[] = [];
   let allUsersData: USERCOMENTS[] = [];
 
-  const [coments, setComents] = useState(data);
   const [allUsers, setAllUsers] = useState(allUsersData);
 
   useEffect(() => {
     getData().then((res) => {
-      setComents(res);
       setAllUsers(transFormData(res));
-      console.log(res);
     });
   }, []);
 
