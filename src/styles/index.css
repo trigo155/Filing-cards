@@ -1,0 +1,28 @@
+:root {
+  --color-red: rgb(236, 9, 9);
+  --color-blue: blue;
+  --color-yellow: rgb(119, 223, 15);
+}
+
+:root {
+  --color-red: rgb(236, 9, 9);
+  --color-blue: blue;
+  --color-yellow: rgb(119, 223, 15);
+}
+
+a {
+  -webkit-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
+}
+
+a:hover {
+  color: var(--color-yellow);
+  font-size: 2rem;
+}
+
+:root {
+  --color-red: rgb(236, 9, 9);
+  --color-blue: blue;
+  --color-yellow: rgb(119, 223, 15);
+}
+/*# sourceMappingURL=index.css.map */
