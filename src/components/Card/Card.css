@@ -1,0 +1,104 @@
+:root {
+  --color-red: rgb(236, 9, 9);
+  --color-blue: blue;
+  --color-yellow: rgb(119, 223, 15);
+}
+
+:root {
+  --color-red: rgb(236, 9, 9);
+  --color-blue: blue;
+  --color-yellow: rgb(119, 223, 15);
+}
+
+a {
+  -webkit-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
+}
+
+a:hover {
+  color: var(--color-yellow);
+  font-size: 2rem;
+}
+
+.b-gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.b-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 20%;
+  margin: 16px;
+  height: 180px;
+  border: 1px solid var(--color-red);
+  border-radius: 10px;
+}
+
+.b-heading:after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-blue);
+  display: block;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.b-heading:hover:after {
+  opacity: 1;
+}
+
+.b-heading--half:after {
+  content: "";
+  width: 50%;
+  height: 2px;
+  background-color: blue;
+  display: block;
+}
+
+.b-button {
+  width: 35%;
+  height: 35%;
+  border-radius: 8px;
+  background-color: #ec9f9f;
+}
+
+.modal-contenido {
+  background-color: aqua;
+  width: 100%;
+  height: 100%;
+  padding: 10px 20px;
+  margin: 20% auto;
+  position: relative;
+  overflow: auto;
+}
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+#miModal:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+/*# sourceMappingURL=Card.css.map */

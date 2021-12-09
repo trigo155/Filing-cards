@@ -1,24 +1,68 @@
-.b-pepe{
+@import '../../styles/settings/colors';
+@import '../../styles/header';
+
+.b-gallery{
     display: flex;
     flex-wrap: wrap;
+    
+    // position: relative;
 }
 
-.b-block{
-    display: flex;
-    justify-content: space-around;
-    width: 50%;
 
-}
 
 .b-card{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-around; 
     align-items: center;
-    width: 35%;
-    border: 1px solid red;
+    width: 20%;
+    margin:16px;
+    height: 180px;
+    border: 1px solid var(--color-red);
     border-radius: 10px;
-    margin: 10px;
+      
 }
+
+
+
+
+
+
+
+
+//raya por debajo con una pequeña animación
+.b-heading:after{
+    content: "";
+    width: 100%;;
+    height: 2px;
+    background-color: var(--color-blue);
+    display: block;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.b-heading:hover:after{
+    opacity: 1;
+}
+
+
+.b-heading--half:after{
+    content: "";
+    width: 50%;;
+    height: 2px;
+    background-color:blue;
+    display: block;
+}
+
+
+
+
+// .b-card:nth-child(even){
+//     background-color:rgb(97, 88, 221);
+// }
+// .b-card:nth-child(odd){
+//     background-color:burlywood;
+// }
+
 
 .b-button{
     width: 35%;
