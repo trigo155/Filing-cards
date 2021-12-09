@@ -12,17 +12,17 @@ const Card = ({ props }: { props: USERCOMENTS[] }) => {
   };
 
   return (
-    <div className="b-pepe">
+    <div className="b-gallery">
       {props.length &&
         props.map((coment, index) => {
           return (
-            <div className="b-block">
+            
               <div className="b-card" key={index}>
-                <h1>User: {coment.userId}</h1>
+                <h1 className="b-heading">User: {coment.userId}</h1>
                 <a href="#miModal" onClick={() => showUser(coment.userId)}>
                   Coments
                 </a>
-              </div>
+            
             </div>
           );
         })}
