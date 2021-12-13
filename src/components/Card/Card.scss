@@ -24,12 +24,6 @@
   }
 }
 
-@media (max-width: 668px) {
-  .b-card {
-    width: 85%;
-  }
-}
-
 .b-heading:after {
   content: "";
   width: 100%;
@@ -49,7 +43,37 @@
   height: 30px;
   border-radius: 10px;
   background-color: #2196f3;
-  margin-top: 20px;
+  margin-top: 12px;
+  margin-bottom: 8px;
   cursor: pointer;
+  &:hover {
+    background-color: #b5d4ee;
+  }
 }
 
+.b-footer {
+  width: 100%;
+  height: 80px;
+  background: #18486e;
+  color: white;
+  position: relative;
+  margin-top: 5px;
+  &:before {
+    content: "";
+    position: absolute;
+    border: {
+      bottom: 40px solid transparent;
+      right: 180px solid white;
+    }
+    top: 0;
+  }
+  & p {
+    padding: 35px;
+  }
+}
+
+@media (max-width: 668px) {
+  .b-card {
+    width: 85%;
+  }
+}

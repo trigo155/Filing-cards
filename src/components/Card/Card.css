@@ -1,47 +1,52 @@
 :root {
   --color-red: rgb(236, 9, 9);
-  --color-blue: blue;
+  --color-blue: #2196F3;
   --color-yellow: rgb(119, 223, 15);
+  --color-secondary-blue: #E3F2FD
+;
 }
 
 :root {
   --color-red: rgb(236, 9, 9);
-  --color-blue: blue;
+  --color-blue: #2196F3;
   --color-yellow: rgb(119, 223, 15);
+  --color-secondary-blue: #E3F2FD
+;
 }
 
-a {
-  -webkit-transition: all 0.8s ease-in-out;
-  transition: all 0.8s ease-in-out;
-}
-
-a:hover {
-  color: var(--color-yellow);
-  font-size: 2rem;
-}
-
-.b-gallery {
+.b-containercard {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .b-card {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 20%;
-  margin: 16px;
-  height: 180px;
-  border: 1px solid var(--color-red);
+  width: 35%;
+  height: 195px;
+  text-align: center;
+  overflow: hidden;
+  padding: 20px;
+  margin: 12px;
+  background: white;
   border-radius: 10px;
+  -webkit-box-shadow: 7px 13px 37px #afd1ec;
+          box-shadow: 7px 13px 37px #afd1ec;
+  border: 1px solid #fff;
+}
+
+.b-card:hover {
+  border: 1px solid #2196f3;
+}
+
+@media (max-width: 668px) {
+  .b-card {
+    width: 85%;
+  }
 }
 
 .b-heading:after {
@@ -59,46 +64,12 @@ a:hover {
   opacity: 1;
 }
 
-.b-heading--half:after {
-  content: "";
-  width: 50%;
-  height: 2px;
-  background-color: blue;
-  display: block;
-}
-
 .b-button {
   width: 35%;
-  height: 35%;
-  border-radius: 8px;
-  background-color: #ec9f9f;
-}
-
-.modal-contenido {
-  background-color: aqua;
-  width: 100%;
-  height: 100%;
-  padding: 10px 20px;
-  margin: 20% auto;
-  position: relative;
-  overflow: auto;
-}
-
-.modal {
-  background-color: rgba(0, 0, 0, 0.8);
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  opacity: 0;
-  pointer-events: none;
-  -webkit-transition: all 1s;
-  transition: all 1s;
-}
-
-#miModal:target {
-  opacity: 1;
-  pointer-events: auto;
+  height: 30px;
+  border-radius: 10px;
+  background-color: #2196f3;
+  margin-top: 20px;
+  cursor: pointer;
 }
 /*# sourceMappingURL=Card.css.map */
