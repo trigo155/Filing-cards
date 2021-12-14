@@ -66,14 +66,14 @@ const PostCards = (props: Iprop) => {
                     >
                       Delete
                     </button>
-                    <Link to={"/edit"}>
-                      className="b-btncoment b-btncoment--blue"
+                    <button className="b-btncoment b-btncoment--blue"
+                      
                       onClick={() => {
                         editFields(userComent);
-                      }}
+                      }}>
                     
                       Edit
-                    </Link>
+                    </button>
                   </div>
                 </div>
               );
