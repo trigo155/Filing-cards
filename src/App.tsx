@@ -3,7 +3,8 @@ import "./App.css";
 import { getData } from "../src/api";
 import { Icoment, USERCOMENTS } from "./types";
 import { transFormData } from "../src/utils";
-import { Card } from "./components/";
+import { Card, Edit, Navbar, PostCards  } from "./components/";
+import { Link, Route, Routes, BrowserRouter as Router } from "react-router-dom";
 
 const App: React.FC = () => {
   let data: Icoment[] = [];
@@ -18,9 +19,26 @@ const App: React.FC = () => {
   }, []);
 
   return (
+    <>
     <div>
-      <Card props={allUsers} />
+        {/* <Navbar /> */}
     </div>
+    <div className="b-containerapp">
+    
+      <Card props={allUsers} />
+
+      <Router>
+        
+        <Routes>
+          <Route path="/edit" element={<Edit />} />
+          
+        </Routes>
+      </Router>
+
+      
+    
+    </div>
+    </>
   );
 };
 
