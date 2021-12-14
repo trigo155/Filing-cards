@@ -1,16 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Icoment, USERCOMENTS } from "../../types";
 import "./Card.scss";
 import "../../fonts/icons/style.scss";
 import PostCards from "../PostsCards/PostCards";
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
 const Card = ({ props }: { props: USERCOMENTS[] }) => {
   let userComents: Icoment[] = [];
   const [state, setState] = useState(userComents);
+  const [isOpen, setisOpen] = useState(false);
 
   const showUser = (n: number) => {
     userComents = props[n - 1].coments;
     setState(userComents);
+  };
+
+  const toggleModal = () => {
+    setisOpen(!isOpen);
   };
 
   return (
@@ -22,11 +28,15 @@ const Card = ({ props }: { props: USERCOMENTS[] }) => {
               <section>
                 <h2 className="b-heading">User: {coment.userId}</h2>
                 <div></div>
-                <button
+                <Button
                   className="b-button"
-                  onClick={() => showUser(coment.userId)}>
+                  onClick={() => {
+                    showUser(coment.userId);
+                    toggleModal();
+                  }}
+                >
                   Comments
-                </button>
+                </Button>
               </section>
               <footer className="b-footer">
                 <p>User {coment.userId} has xxx comments </p>
@@ -34,7 +44,9 @@ const Card = ({ props }: { props: USERCOMENTS[] }) => {
             </div>
           );
         })}
-      {state.length && <PostCards props={state} />}
+      {isOpen && (
+        <PostCards props={state} isOpen={isOpen} setisOpen={setisOpen} />
+      )}
     </div>
   );
 };
