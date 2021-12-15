@@ -33,7 +33,9 @@ const Card = ({ props }: { props: USERCOMENTS[] }) => {
                       <span className="icon-user"></span> {coment.userId}
                     </div>
                     <div className="card__text">
-                     <p>Please, press the button to see the user's comments.</p>
+                      <p>
+                        Please, press the button to see the user's comments.
+                      </p>
                     </div>
                     <Button
                       className="btn btn--block card__btn b-button"

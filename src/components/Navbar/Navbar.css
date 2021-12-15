@@ -1,6 +1,12 @@
 :root {
-  --color-red: rgb(236, 9, 9);
-  --color-blue: blue;
-  --color-yellow: rgb(119, 223, 15);
+  --color-red: rgb(244, 67, 54);
+  --color-blue: rgb(33, 150, 243);
+  --color-blue--mild:#dee2e6;
+  --color-white--primary: white;
+  --color-white--secondary: #f0f0f0;
+  --color-gray--primary: #696969;
+  --color-gray--secondary: rgb(158, 158, 158);
+  --color-gray--tertiary: #cccccc;
+  --color-black-modal: #111111bd;
 }
 /*# sourceMappingURL=Navbar.css.map */
