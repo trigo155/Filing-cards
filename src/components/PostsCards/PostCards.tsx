@@ -12,9 +12,9 @@ type Iprop = {
 
 const PostCards = (props: Iprop) => {
   const [firstArray, setFirstArray] = useState([...props.props]);
-  const [edit, setEdit] = useState(false);
-  const [title, setTitle] = useState("");
-  const [body, setBody] = useState("");
+  // const [edit, setEdit] = useState(false);
+  // const [title, setTitle] = useState("");
+  // const [body, setBody] = useState("");
 
   const deleteComent = (n: number) => {
     const mostrar: Icoment[] = props.props.splice(n, 1);
@@ -22,11 +22,15 @@ const PostCards = (props: Iprop) => {
     setFirstArray([...props.props]);
   };
 
-  const editFields = (objeto: any) => {
-    setTitle(objeto.title);
-    setBody(objeto.body);
-    setEdit(true);
-  };
+  // const editFields = (objeto: Icoment) => {
+  //   setTitle(objeto.title);
+  //   setBody(objeto.body);
+  //   setEdit(true);
+  // };
+
+  const editFields = () => {
+      alert('This functionality is in process 🙂');
+  }
 
   return (
     <div>
@@ -37,15 +41,6 @@ const PostCards = (props: Iprop) => {
         scrollable={true}
         className={"b-modalClassName"}
         contentClassName={"b-modalContent"}
-        external={
-          <button
-            className="close"
-            onClick={() => props.setisOpen(!props.isOpen)}
-            style={{ position: "absolute", right: "15px", top: "15px" }}
-          >
-            ×
-          </button>
-        }
         toggle={() => props.setisOpen(!props.isOpen)}
         isOpen={props.isOpen}
       >
@@ -59,20 +54,21 @@ const PostCards = (props: Iprop) => {
                   {userComent.title}
                   <h3 className="b-message">Message</h3>
                   {userComent.body}
-                  <div style={{ margin: "auto", display: "flex" }}>
+                  <div className="b-btncontainer">
+                    
                     <button
                       className="b-btncoment b-btncoment--red"
                       onClick={() => deleteComent(index)}
                     >
-                      Delete
+                      <span className="icon-bin"></span>
                     </button>
                     <button className="b-btncoment b-btncoment--blue"
                       
                       onClick={() => {
-                        editFields(userComent);
+                        editFields();
                       }}>
                     
-                      Edit
+                    <span className="icon-pencil"></span>
                     </button>
                   </div>
                 </div>
@@ -80,13 +76,7 @@ const PostCards = (props: Iprop) => {
             })}
         </ModalBody>
         <ModalFooter className="b-modalFooter">
-          <Button
-            color="primary"
-            onClick={() => props.setisOpen(!props.isOpen)}
-          >
-            Do Something
-          </Button>{" "}
-          <Button onClick={() => props.setisOpen(!props.isOpen)}>Cancel</Button>
+          <Button className="b-btncancel" onClick={() => props.setisOpen(!props.isOpen)}>Cancel</Button>
         </ModalFooter>
       </Modal>
     </div>
