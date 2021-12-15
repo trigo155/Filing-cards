@@ -1,20 +1,48 @@
 :root {
   --color-red: rgb(236, 9, 9);
-  --color-blue: #2196F3;
+  --color-blue: blue;
   --color-yellow: rgb(119, 223, 15);
-  --color-secondary-blue: #E3F2FD
-;
 }
 
 :root {
   --color-red: rgb(236, 9, 9);
-  --color-blue: #2196F3;
+  --color-blue: blue;
   --color-yellow: rgb(119, 223, 15);
-  --color-secondary-blue: #E3F2FD
-;
 }
 
-.b-containercard {
+.b-button {
+  font-size: 1rem;
+  cursor: pointer;
+  -webkit-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
+}
+
+.b-button:hover {
+  color: white;
+  font-size: 1rem;
+  background-color: #747373;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.btn {
+  background-color: white;
+  border: 1px solid  #cccccc;
+  color: #696969;
+  padding: 0.5rem;
+  text-transform: lowercase;
+}
+
+.btn--block {
+  display: block;
+  width: 100%;
+}
+
+.cards {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -23,53 +51,134 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin: 0;
+  padding: 0;
 }
 
-.b-card {
-  width: 35%;
-  height: 195px;
-  text-align: center;
-  overflow: hidden;
-  padding: 20px;
-  margin: 12px;
-  background: white;
-  border-radius: 10px;
-  -webkit-box-shadow: 7px 13px 37px #afd1ec;
-          box-shadow: 7px 13px 37px #afd1ec;
-  border: 1px solid #fff;
+.cards__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1rem;
 }
 
-.b-card:hover {
-  border: 1px solid #2196f3;
-}
-
-@media (max-width: 668px) {
-  .b-card {
-    width: 85%;
+@media (min-width: 40rem) {
+  .cards__item {
+    width: 50%;
   }
 }
 
-.b-heading:after {
+@media (min-width: 56rem) {
+  .cards__item {
+    width: 33.3333%;
+  }
+}
+
+.card {
+  background-color: white;
+  border-radius: 0.25rem;
+  -webkit-box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+}
+
+.card:hover .card__image {
+  -webkit-filter: contrast(100%);
+          filter: contrast(100%);
+}
+
+.card__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1rem;
+}
+
+.card__image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  -webkit-filter: contrast(70%);
+          filter: contrast(70%);
+  -webkit-filter: saturate(180%);
+          filter: saturate(180%);
+  overflow: hidden;
+  position: relative;
+  -webkit-transition: -webkit-filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
+  transition: -webkit-filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
+  transition: filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
+  transition: filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91), -webkit-filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
+}
+
+.card__image::before {
   content: "";
-  width: 100%;
-  height: 2px;
-  background-color: var(--color-blue);
   display: block;
-  opacity: 0;
-  -webkit-transition: opacity 0.5s ease-in-out;
-  transition: opacity 0.5s ease-in-out;
+  padding-top: 56.25%;
 }
 
-.b-heading:hover:after {
-  opacity: 1;
+@media (min-width: 40rem) {
+  .card__image::before {
+    padding-top: 66.6%;
+  }
 }
 
-.b-button {
-  width: 35%;
-  height: 30px;
-  border-radius: 10px;
-  background-color: #2196f3;
-  margin-top: 20px;
-  cursor: pointer;
+.card__image--flowers {
+  background-image: url(https://unsplash.it/800/600?image=82);
+}
+
+.card__image--river {
+  background-image: url(https://unsplash.it/800/600?image=11);
+}
+
+.card__image--record {
+  background-image: url(https://unsplash.it/800/600?image=39);
+}
+
+.card__image--fence {
+  background-image: url(https://unsplash.it/800/600?image=82);
+  background-image: url(https://unsplash.it/800/600?image=59);
+  background-image: url(https://unsplash.it/800/600?image=11);
+  background-image: url(https://unsplash.it/800/600?image=82);
+}
+
+.card__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  color: #696969;
+  font-size: 1.10rem;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  padding: 10px;
+}
+
+.icon-user {
+  font-size: 30px;
+}
+
+.card__text {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  color: #696969;
 }
 /*# sourceMappingURL=Card.css.map */
