@@ -3,7 +3,7 @@ import { Icoment, USERCOMENTS } from "../../types";
 import "./Card.scss";
 import "../../fonts/icons/style.scss";
 import PostCards from "../PostsCards/PostCards";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import { Button } from "reactstrap";
 
 const Card = ({ props }: { props: USERCOMENTS[] }) => {
   let userComents: Icoment[] = [];
@@ -20,33 +20,39 @@ const Card = ({ props }: { props: USERCOMENTS[] }) => {
   };
 
   return (
-    <div className="b-containercard">
-      {props.length > 0 &&
-        props.map((coment, index) => {
-          return (
-            <div className="b-card" key={index}>
-              <section>
-                <h2 className="b-heading">User: {coment.userId}</h2>
-                <div></div>
-                <Button
-                  className="b-button"
-                  onClick={() => {
-                    showUser(coment.userId);
-                    toggleModal();
-                  }}
-                >
-                  Comments
-                </Button>
-              </section>
-              <footer className="b-footer">
-                <p>User {coment.userId} has xxx comments </p>
-              </footer>
-            </div>
-          );
-        })}
-      {isOpen && (
-        <PostCards props={state} isOpen={isOpen} setisOpen={setisOpen} />
-      )}
+    <div>
+      <div className="cards">
+        {props.length > 0 &&
+          props.map((coment, index) => {
+            return (
+              <div className="cards__item" key={index}>
+                <div className="card">
+                  <div className="card__image card__image--fence"></div>
+                  <div className="card__content">
+                    <div className="card__title">
+                      <span className="icon-user"></span> {coment.userId}
+                    </div>
+                    <div className="card__text">
+                     <p>Please, press the button to see the user's comments.</p>
+                    </div>
+                    <Button
+                      className="btn btn--block card__btn b-button"
+                      onClick={() => {
+                        showUser(coment.userId);
+                        toggleModal();
+                      }}
+                    >
+                      Comments <span className="icon-bubble2"></span>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        {isOpen && (
+          <PostCards props={state} isOpen={isOpen} setisOpen={setisOpen} />
+        )}
+      </div>
     </div>
   );
 };
