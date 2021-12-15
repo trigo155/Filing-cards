@@ -1,8 +1,10 @@
-@charset "UTF-8";
 @font-face {
-  font-family: "icomoon";
-  src: url("fonts/icomoon.eot?brxa6i");
-  src: url("fonts/icomoon.eot?brxa6i#iefix") format("embedded-opentype"), url("fonts/icomoon.ttf?brxa6i") format("truetype"), url("fonts/icomoon.woff?brxa6i") format("woff"), url("fonts/icomoon.svg?brxa6i#icomoon") format("svg");
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?4hbntr');
+  src:  url('fonts/icomoon.eot?4hbntr#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?4hbntr') format('truetype'),
+    url('fonts/icomoon.woff?4hbntr') format('woff'),
+    url('fonts/icomoon.svg?4hbntr#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -10,55 +12,28 @@
 
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: "icomoon" !important;
+  font-family: 'icomoon' !important;
   speak: never;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
   text-transform: none;
   line-height: 1;
+
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-happy:before {
-  content: "";
+.icon-pencil:before {
+  content: "\e905";
 }
-
-.icon-smile:before {
-  content: "";
+.icon-bubble2:before {
+  content: "\e96e";
 }
-
-.icon-tongue:before {
-  content: "";
+.icon-user:before {
+  content: "\e971";
 }
-
-.icon-wink:before {
-  content: "";
+.icon-bin:before {
+  content: "\e9ac";
 }
-
-.icon-grin:before {
-  content: "";
-}
-
-.icon-cool:before {
-  content: "";
-}
-
-.icon-evil:before {
-  content: "";
-}
-
-.icon-shocked:before {
-  content: "";
-}
-
-.icon-baffled:before {
-  content: "";
-}
-
-.icon-hipster:before {
-  content: "";
-}
-/*# sourceMappingURL=style.css.map */

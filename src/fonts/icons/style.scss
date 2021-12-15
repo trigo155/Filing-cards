@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: '#{$icomoon-font-family}';
-  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?brxa6i');
-  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?brxa6i#iefix') format('embedded-opentype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?brxa6i') format('truetype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?brxa6i') format('woff'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?brxa6i##{$icomoon-font-family}') format('svg');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?4hbntr');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?4hbntr#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?4hbntr') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?4hbntr') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?4hbntr##{$icomoon-font-family}') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -27,54 +27,24 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-happy {
+.icon-pencil {
   &:before {
-    content: $icon-happy; 
+    content: $icon-pencil; 
   }
 }
-.icon-smile {
+.icon-bubble2 {
   &:before {
-    content: $icon-smile; 
+    content: $icon-bubble2; 
   }
 }
-.icon-tongue {
+.icon-user {
   &:before {
-    content: $icon-tongue; 
+    content: $icon-user; 
   }
 }
-.icon-wink {
+.icon-bin {
   &:before {
-    content: $icon-wink; 
-  }
-}
-.icon-grin {
-  &:before {
-    content: $icon-grin; 
-  }
-}
-.icon-cool {
-  &:before {
-    content: $icon-cool; 
-  }
-}
-.icon-evil {
-  &:before {
-    content: $icon-evil; 
-  }
-}
-.icon-shocked {
-  &:before {
-    content: $icon-shocked; 
-  }
-}
-.icon-baffled {
-  &:before {
-    content: $icon-baffled; 
-  }
-}
-.icon-hipster {
-  &:before {
-    content: $icon-hipster; 
+    content: $icon-bin; 
   }
 }
 
