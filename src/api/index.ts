@@ -6,9 +6,11 @@ export const getData = async (): Promise<Array<Icoment>> => {
   try {
     const response = await fetch(api);
     auxData = await response.json();
-    return auxData;
+    //return auxData;
   } catch (error) {
     console.log("Error", error);
   }
+  console.log('auxData--------->', auxData);//datos de la api
+  
   return auxData;
 };
