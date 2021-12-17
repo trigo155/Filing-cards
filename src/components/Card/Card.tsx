@@ -4,6 +4,7 @@ import "./Card.scss";
 import "../../fonts/icons/style.scss";
 import PostCards from "../PostsCards/PostCards";
 import { Button } from "reactstrap";
+import { arrayImg } from "../../utils";
 
 const Card = ({ props }: { props: USERCOMENTS[] }) => {
   let userComents: Icoment[] = [];
@@ -19,6 +20,7 @@ const Card = ({ props }: { props: USERCOMENTS[] }) => {
     setisOpen(!isOpen);
   };
 
+ 
   return (
     <div>
       <div className="cards">
@@ -27,7 +29,9 @@ const Card = ({ props }: { props: USERCOMENTS[] }) => {
             return (
               <div className="cards__item" key={index}>
                 <div className="card">
-                  <div className="card__image card__image--fence"></div>
+                  <div>
+                    <img className="card__image" src={arrayImg[index]} alt="User image" />
+                  </div>
                   <div className="card__content">
                     <div className="card__title">
                       <span className="icon-user"></span> {coment.userId}
