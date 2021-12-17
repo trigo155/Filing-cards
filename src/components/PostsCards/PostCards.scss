@@ -9,7 +9,7 @@
   width: 100%;
   position: relative;
   @media (min-width: 768px) {
-    width: 46%;
+    width: 39%;
   }
 }
 
@@ -121,6 +121,7 @@
   flex: 1 1 auto;
   padding: 1rem;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   overflow: auto;
   max-height: 80vh;
